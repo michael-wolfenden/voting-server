@@ -1,4 +1,5 @@
 module.exports = {
+    "parser": "babel-eslint",
     "extends": "airbnb/base",
     "rules": {
         "indent": [2, 4],
