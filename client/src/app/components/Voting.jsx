@@ -13,9 +13,9 @@ class Vote extends Component {
         return (
             <div className="voting">
                 {this.getPair().map(entry =>
-                <button key={entry}>
-                    <h1>{entry}</h1>
-                </button>
+                    <button key={entry}>
+                        <h1>{entry}</h1>
+                    </button>
                 )}
             </div>
         );
