@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 
-class Vote extends React.Component {
+class Vote extends Component {
+    static propTypes = {
+        pair: PropTypes.array,
+    };
+
     getPair() {
         return this.props.pair || [];
     }
@@ -17,9 +21,5 @@ class Vote extends React.Component {
         );
     }
 }
-
-Vote.propTypes = {
-    pair: React.PropTypes.array,
-};
 
 export default Vote;
