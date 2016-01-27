@@ -1,25 +1,21 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 
-class Vote extends Component {
-    static propTypes = {
-        pair: PropTypes.array,
-    };
+const Vote = (props) => (
+    <div className="voting">
+        {props.pair.map(entry =>
+            <button key={entry}>
+                <h1>{entry}</h1>
+            </button>
+        )}
+    </div>
+);
 
-    getPair() {
-        return this.props.pair || [];
-    }
+Vote.propTypes = {
+    pair: PropTypes.arrayOf(PropTypes.string),
+};
 
-    render() {
-        return (
-            <div className="voting">
-                {this.getPair().map(entry =>
-                    <button key={entry}>
-                        <h1>{entry}</h1>
-                    </button>
-                )}
-            </div>
-        );
-    }
-}
+Vote.defaultProps = {
+    pair: [],
+};
 
 export default Vote;
