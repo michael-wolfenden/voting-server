@@ -29,6 +29,7 @@
     "eslint-loader": "1.2.0",
     "eslint-plugin-react": "3.16.1",
     "html-webpack-plugin": "1.7.0",
+    "jsx-chai": "2.0.0",
     "karma": "0.13.19",
     "karma-cli": "0.1.2",
     "karma-mocha": "0.2.1",
@@ -38,6 +39,7 @@
     "mocha": "2.3.4",
     "open-browser-webpack-plugin": "0.0.2",
     "phantomjs": "1.9.19",
+    "react-addons-test-utils": "0.14.6",
     "source-map-url": "0.4.0",
     "webpack": "1.12.11",
     "webpack-dev-server": "1.14.1"

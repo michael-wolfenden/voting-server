@@ -1,4 +1,7 @@
-const chai = require('chai');
-const chaiImmutable = require('chai-immutable');
+// phantomjs require es2015 pollyfills
+require('babel-polyfill');
 
-chai.use(chaiImmutable);
+const chai = require('chai');
+const jsxChai = require('jsx-chai').default;
+
+chai.use(jsxChai);

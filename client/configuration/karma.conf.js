@@ -1,6 +1,8 @@
 var webpack = require('webpack');
 var webpackConfig = require('./webpack.development.config');
 
+// to debug open http://127.0.0.1:9876/debug.html and check console
+
 module.exports = function (config) {
     config.set({
         
@@ -24,6 +26,7 @@ module.exports = function (config) {
         reporters: ['mocha'],
 
         webpack: {
+            resolve: webpackConfig.resolve,
             module: webpackConfig.module
         },
         
