@@ -7,8 +7,7 @@ module.exports = {
         "no-use-before-define": 0,
         "react/jsx-no-bind": [1, {
             "allowArrowFunctions": true
-        }],
-        "react/jsx-quotes": [1, "single"]
+        }]
     },
     "env": {
         "mocha": true

@@ -1,35 +1,23 @@
 import React, { PropTypes } from 'react';
+import Winner from './Winner';
+import Vote from './Vote';
 
-const Vote = ({ pair, vote, hasVoted }) => {
-    const isDisabled = !!hasVoted;
-    const hasVotedFor = entry => hasVoted === entry;
+const Voting = (props) => {
+    const { winner } = props;
 
     return (
-        <div className="voting">
+        <div>
             {
-                pair.map(entry => (
-                    <button
-                      key={entry}
-                      disabled={isDisabled}
-                      onClick={() => vote(entry)}
-                    >
-                        <h1>{entry}</h1>
-                        {hasVotedFor(entry) ? <div className="label">Voted</div> : null}
-                    </button>
-                ))
+                winner ?
+                    <Winner winner={winner} /> :
+                    <Vote {...props} />
             }
         </div>
     );
 };
 
-Vote.propTypes = {
-    pair: PropTypes.arrayOf(PropTypes.string),
-    hasVoted: PropTypes.string,
-    vote: PropTypes.func,
+Voting.propTypes = {
+    winner: PropTypes.string,
 };
 
-Vote.defaultProps = {
-    pair: [],
-};
-
-export default Vote;
+export default Voting;

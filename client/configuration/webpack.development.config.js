@@ -53,7 +53,7 @@ const webpackOptions = {
         }),
 
         new OpenBrowserPlugin({
-            url: `http://localhost:8080/index.html`
+            url: 'http://localhost:8080/index.html'
         })
     ]
 };

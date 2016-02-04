@@ -4,6 +4,7 @@ import $ from 'teaspoon';
 
 import Voting from './Voting';
 
+
 describe('Voting', () => {
     it('renders a pair of buttons', () => {
         const $component = $(
@@ -31,5 +32,44 @@ describe('Voting', () => {
             .trigger('click');
 
         expect(votedWith).to.equal('Trainspotting');
+    });
+
+    it('disables buttons when user has voted', () => {
+        const $component = $(
+            <Voting
+              pair={['Trainspotting', '28 Days Later']}
+              hasVoted="Trainspotting"
+            />
+        ).render();
+
+        const $buttons = $component.find('button');
+
+        expect($buttons.first().is(':disabled')).to.equal(true);
+        expect($buttons.last().is(':disabled')).to.equal(true);
+    });
+
+    it('adds label to the voted entry', () => {
+        const $component = $(
+            <Voting
+              pair={['Trainspotting', '28 Days Later']}
+              hasVoted="Trainspotting"
+            />
+        ).render();
+
+        const $label = $component.find('.label');
+
+        expect($label.text()).to.equal('Voted');
+    });
+
+    it('renders just the winner when there is one', () => {
+        const $component = $(
+            <Voting winner="Trainspotting" />
+        ).render();
+
+        $component.none('button');
+
+        const $winner = $component.find('.winner');
+
+        expect($winner.text()).to.contain('Trainspotting');
     });
 });
